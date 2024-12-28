@@ -7,7 +7,14 @@
 #include <open.mp>
 #include <2DArrayManager>
 
-new Houses[100][7][150]; 
+new Houses[100][7][150];
+
+/*
+ * `100`: we have 100 houses
+ * `7`: we have 7 sublist for houses
+ * `150`: we can add set number up to 148
+ * why 148? becouse 149 is the number of items in list
+ */
 
 main() {
 
