@@ -71,4 +71,4 @@ main() {
 >* **Parameters:**
 >	* `name`: array [ x ] [ y ] [ maximum ]
 >* **Returns:**
->	* Number of items in array
+>	* Number of item in array
