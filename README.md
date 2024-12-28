@@ -15,16 +15,22 @@ main() {
     2DArray_Add(Houses[3][5][150], 14);
     2DArray_Add(Houses[3][5][150], 65);
 
+    // returns 3
     printf("Number of items in Houses[3][5]: %i", 2DArray_Count(Houses[3][5][150]));
 
-    printf("Item 6 exists in Houses[3][5]? %i", iIter_Contains(Houses[3][5][150], 6) ? ("Yes"):("No"));
-    printf("Item 65 exists in Houses[3][5]? %i", iIter_Contains(Houses[3][5][150], 65) ? ("Yes"):("No"));
+    // returns No
+    printf("Item 6 exists in Houses[3][5]? %i", 2DArray_Contains(Houses[3][5][150], 6) ? ("Yes"):("No"));
 
-    iIter_Remove(Houses[3][5][150], 65);
+    // returns Yes
+    printf("Item 65 exists in Houses[3][5]? %i", 2DArray_Contains(Houses[3][5][150], 65) ? ("Yes"):("No"));
 
+    2DArrayRemove(Houses[3][5][150], 65);
+
+    // returns 2
     printf("Number of items in Houses[3][5]: %i", 2DArray_Count(Houses[3][5][150]));
 
-    printf("Item 65 exists in Houses[3][5]? %i", iIter_Contains(Houses[3][5][150], 65) ? ("Yes"):("No"));
+    // returns Yes
+    printf("Item 65 exists in Houses[3][5]? %i", 2DArray_Contains(Houses[3][5][150], 65) ? ("Yes"):("No"));
 
 }
 ```
@@ -32,5 +38,7 @@ main() {
 #### 2DArray_Add
 >* **Parameters:**
 >	* `name`: array [ x ] [ y ] [ maximum ]
+>	* `value`: value you want to add
 >* **Returns:**
->	* true or false
+>	* true if Success
+>	* false if Failure
