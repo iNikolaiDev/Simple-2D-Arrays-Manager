@@ -34,6 +34,7 @@ main() {
 
 }
 ```
+## Avalible Functions
 
 #### 2DArray_Add
 >* **Parameters:**
