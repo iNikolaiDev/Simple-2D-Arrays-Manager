@@ -39,6 +39,12 @@ main() {
     // returns No
     printf("Item 65 exists in Houses[3][5]? %i", 2DArray_Contains(Houses[3][5][150], 65) ? ("Yes"):("No"));
 
+    // loop each value of Houses[3][5][150]
+	2DArray_Foreach(value : Houses[3][5][150]) {
+
+		printf("Value %i", value); // output: 25, 14
+
+	}
 }
 ```
 ## Available Functions
