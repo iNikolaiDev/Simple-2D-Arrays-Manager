@@ -45,30 +45,36 @@ main() {
 
 #### 2DArray_Add
 >* **Parameters:**
->	* `name`: array [ x ] [ y ] [ maximum ]
->	* `value`: value you want to add
+>	* `name`: array[][][slot]
+>	* `value`: Value of array
 >* **Returns:**
 >	* true if Success
 >	* false if Failure
 
 #### 2DArray_Remove
 >* **Parameters:**
->	* `name`: array [ x ] [ y ] [ maximum ]
->	* `value`: value you want to remove from array
+>	* `name`: array[][][slot]
+>	* `value`: Removed Value of array
 >* **Returns:**
 >	* true if Success
 >	* false if Failure
 
 #### 2DArray_Contains
 >* **Parameters:**
->	* `name`: array [ x ] [ y ] [ maximum ]
->	* `value`: value you want to check
+>	* `name`: array[][][slot]
+>	* `value`: Value you want to check
 >* **Returns:**
->	* true if exists
->	* false if not exists
+>	* true if Exists
+>	* false if not Exists
 
 #### 2DArray_Count
 >* **Parameters:**
->	* `name`: array [ x ] [ y ] [ maximum ]
+>	* `name`: array[][][slot]
 >* **Returns:**
 >	* Number of item in array
+
+#### 2DArray_Foreach (New)
+>* **Parameters:**
+>	* `name`: array[][][slot]
+>* **Returns:**
+>	* Loop each array value

@@ -1,5 +1,5 @@
 /*
-    v0.0.1
+    v0.0.2
     - author: Nikolai.
 
 */
@@ -7,7 +7,8 @@
 stock bool:AddItemTo2DArray(const array[][][], x, y, max, value) {
     if (array[x][y][max-1] < max) { // Check if there's space to add (avoiding full sublist)
         for (new i = 0; i < max; i++) {
-            if ( array[x][y][i] == 0 ) { // filter non empty items , 0 means empty
+            if (array[x][y][i] == value) return false;
+            else if (array[x][y][i] == 0) { // filter non empty items , 0 means empty
                 array[x][y][i] = value; array[x][y][max-1]++; // Increment the counter for item count
                 // printf("[DEBUG]: array[%i][%i][%i] value: %i", x, y, i, array[x][y][i]);
                 return true; // Success
@@ -36,22 +37,29 @@ stock bool:isContainsItemIn2DArray(const array[][][], x, y, max, value) {
 stock ItemsCountInList2DArray(const array[][][], x, y, max) return array[x][y][max-1];
 
 /**
- * Useage: 2DArray_Add(iterator<>, value);
+ * Useage: 2DArray_Add(array[], value);
  *
  */
 #define 2DArray_Add(%0[%1][%2][%3],%4) AddItemTo2DArray(%0, %1, %2, %3, %4)
 /**
- * Useage: 2DArray_Remove(iterator<>, value);
+ * Useage: 2DArray_Remove(array[], value);
  *
  */
 #define 2DArray_Remove(%0[%1][%2][%3],%4) RemoveItemFrom2DArray(%0, %1, %2, %3, %4)
 /**
- * Useage: 2DArray_Contains(iterator<>, value);
+ * Useage: 2DArray_Contains(array[], value);
  *
  */
 #define 2DArray_Contains(%0[%1][%2][%3],%4) isContainsItemIn2DArray(%0, %1, %2, %3, %4)
 /**
- * Useage: 2DArray_Count(iterator<>);
+ * Useage: 2DArray_Count(array[]);
  *
  */
 #define 2DArray_Count(%0[%1][%2][%3]) ItemsCountInList2DArray(%0, %1, %2, %3)
+/**
+ * Useage: 2DArray_Foreach(array[]); (New)
+ *
+ */
+#define 2DArray_Foreach(%0:%1[%2][%3][%4]) \
+    for (new _i = 0, %0; _i < %4-1; ++_i) \
+        if (%1[%2][%3][_i] != 0 && ((%0 = %1[%2][%3][_i]), true))
