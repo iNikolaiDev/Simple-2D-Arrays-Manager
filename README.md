@@ -54,7 +54,7 @@ main() {
 #### 2DArray_Remove
 >* **Parameters:**
 >	* `name`: array[][][slot]
->	* `value`: Removed Value of array
+>	* `value`: Value of array
 >* **Returns:**
 >	* true if Success
 >	* false if Failure
